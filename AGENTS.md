@@ -17,6 +17,11 @@ HTMLビジュアライゼーションの出力テンプレート。
 デザインの方向性が指定された場合や、既存ブランドの視覚言語を参考にしたい場合は、必要に応じて `vendor/awesome-design-md/design-md/<brand>/DESIGN.md` を読む。
 `DESIGN.md` は参考資料であり、商標やブランドそのものを複製するためではなく、配色・余白・タイポグラフィ・密度・UIの作法を理解するために使う。
 
+## Superpowers
+
+このリポジトリには `.agents/skills/superpowers/` と `.agents/skills/using-superpowers/` を含む Superpowers ワークフロー一式を同梱している。
+会話開始時や開発フローの判断に Superpowers を使える環境では、プロジェクト内の `.agents/skills/using-superpowers/SKILL.md` を優先して参照する。
+
 ## 出力ルール
 
 - ビジュアル化ごとに **カテゴリフォルダ配下** に kebab-case のフォルダを作成

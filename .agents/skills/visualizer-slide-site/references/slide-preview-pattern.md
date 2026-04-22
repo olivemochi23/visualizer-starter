@@ -42,9 +42,6 @@ Each slide should have:
 - Set `min-height: 0` on the list so internal overflow actually works.
 - Screen-only responsive breakpoints should be written as `@media screen and (...)` so print/PDF export does not accidentally switch to the mobile stacked layout.
 
-## Source Implementations
+## Source Reference
 
-- `./personal/relationship-atlas/index.html`
-- `./personal/relationship-atlas-casual/index.html`
-
-Use them as behavioral references, not as fixed visual templates.
+Use `.agents/skills/visualizer-slide-site/assets/slide-site-template.html` as the behavioral reference, not as a fixed visual template.
