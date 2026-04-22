@@ -57,6 +57,41 @@ npm run export:pdf -- path/to/visualization
 npx prettier --write path/to/index.html
 ```
 
+## リモート更新後にローカルを更新する
+
+既存のローカル環境でリモートの最新状態を取り込むときは、作業中の差分がないことを確認してから pull します。
+
+```bash
+cd visualizer-starter
+git status --short
+git switch main
+git pull --ff-only origin main
+npm ci
+```
+
+作業中の変更がある場合は、先にコミットするか一時退避してください。
+
+```bash
+git stash push -m "wip"
+git switch main
+git pull --ff-only origin main
+git stash pop
+```
+
+まだ main にマージされていない作業ブランチを確認したい場合は、ブランチ名を指定して取得します。
+
+```bash
+git fetch origin
+git switch <branch-name>
+git pull --ff-only origin <branch-name>
+```
+
+Playwright のブラウザが未導入、または更新後にPDF出力やスライド検証でブラウザが見つからない場合は、次を実行します。
+
+```bash
+npm run install:browser
+```
+
 ## Gitに入れないもの
 
 `inbox/`、`exports/`、`node_modules/`、`.claude/worktrees/` はローカル作業用です。

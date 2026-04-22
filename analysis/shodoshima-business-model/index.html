@@ -1,0 +1,2616 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小豆島ビジネス構想 | 人材×ユニフォームモデル</title>
+    <link rel="stylesheet" href="../../shared/slide-pdf-export.css" />
+    <style>
+      :root {
+        --paper: #f7f4ec;
+        --paper-deep: #eee7db;
+        --ink: #061b31;
+        --body: #24364b;
+        --muted: #64748d;
+        --blue: #0017c1;
+        --blue-soft: rgba(0, 23, 193, 0.09);
+        --olive: #55743a;
+        --olive-soft: rgba(85, 116, 58, 0.13);
+        --orange: #c85b20;
+        --orange-soft: rgba(200, 91, 32, 0.12);
+        --red: #b42318;
+        --red-soft: rgba(180, 35, 24, 0.1);
+        --aqua: #2874ad;
+        --aqua-soft: rgba(40, 116, 173, 0.12);
+        --accent: var(--blue);
+        --accent-2: var(--ink);
+        --print-page-width: 1600px;
+        --print-page-height: 900px;
+        --line: rgba(6, 27, 49, 0.13);
+        --line-strong: rgba(6, 27, 49, 0.24);
+        --white: #fffdfa;
+        --shadow:
+          0 26px 58px rgba(50, 50, 93, 0.14), 0 10px 28px rgba(6, 27, 49, 0.08);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Segoe UI",
+          sans-serif;
+        font-feature-settings: "palt" 1;
+      }
+
+      body {
+        height: 100%;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        content: "";
+        background:
+          linear-gradient(
+            115deg,
+            rgba(255, 253, 250, 0.92),
+            rgba(247, 244, 236, 0.74) 44%,
+            rgba(238, 231, 219, 0.82)
+          ),
+          radial-gradient(
+            circle at 12% 18%,
+            rgba(0, 23, 193, 0.1),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 82% 12%,
+            rgba(85, 116, 58, 0.14),
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 76% 82%,
+            rgba(200, 91, 32, 0.12),
+            transparent 24%
+          );
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        opacity: 0.2;
+        background-image:
+          linear-gradient(rgba(6, 27, 49, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(6, 27, 49, 0.07) 1px, transparent 1px);
+        background-size: 44px 44px;
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 16%,
+          #000 84%,
+          transparent
+        );
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      .slide {
+        position: relative;
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        padding: 42px 64px 44px;
+        overflow: hidden;
+        scroll-snap-align: start;
+      }
+
+      .slide::before {
+        position: absolute;
+        inset: 22px 24px;
+        z-index: 0;
+        pointer-events: none;
+        content: "";
+        border: 1px solid rgba(6, 27, 49, 0.08);
+        border-radius: 12px;
+      }
+
+      .slide > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .slide-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--blue);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kicker::before {
+        width: 26px;
+        height: 2px;
+        content: "";
+        background: currentcolor;
+      }
+
+      .slide-number {
+        min-width: 76px;
+        color: rgba(6, 27, 49, 0.45);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .title-block {
+        display: grid;
+        gap: 14px;
+      }
+
+      .title-block h1,
+      .title-block h2 {
+        max-width: 980px;
+        color: var(--ink);
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.12;
+      }
+
+      .title-block h1 {
+        max-width: 840px;
+        font-size: 4.1rem;
+        line-height: 1.03;
+      }
+
+      .lead {
+        max-width: 820px;
+        color: var(--body);
+        font-size: 1.15rem;
+        font-weight: 500;
+        line-height: 1.75;
+      }
+
+      .fine {
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.65;
+      }
+
+      .panel {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 250, 0.86);
+        box-shadow: var(--shadow);
+      }
+
+      .panel.dark {
+        color: #f8fafc;
+        border-color: rgba(255, 255, 255, 0.1);
+        background: var(--ink);
+        box-shadow: 0 30px 60px rgba(6, 27, 49, 0.28);
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        width: max-content;
+        min-height: 28px;
+        padding: 4px 9px;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: var(--white);
+        color: var(--ink);
+        font-size: 0.76rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .tag.blue {
+        border-color: rgba(0, 23, 193, 0.24);
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+
+      .tag.olive {
+        border-color: rgba(85, 116, 58, 0.3);
+        background: var(--olive-soft);
+        color: var(--olive);
+      }
+
+      .tag.orange {
+        border-color: rgba(200, 91, 32, 0.32);
+        background: var(--orange-soft);
+        color: var(--orange);
+      }
+
+      .tag.red {
+        border-color: rgba(180, 35, 24, 0.28);
+        background: var(--red-soft);
+        color: var(--red);
+      }
+
+      .metric {
+        color: var(--ink);
+        font-weight: 800;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .accent-rule {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, var(--blue), transparent);
+      }
+
+      .hero-slide {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 46px;
+        align-items: center;
+      }
+
+      .hero-copy {
+        display: grid;
+        gap: 30px;
+        align-content: center;
+      }
+
+      .hero-thesis {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        max-width: 780px;
+      }
+
+      .thesis-card {
+        min-height: 118px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 250, 0.84);
+      }
+
+      .thesis-card strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--ink);
+        font-size: 1.28rem;
+      }
+
+      .thesis-card span {
+        color: var(--body);
+        font-size: 0.86rem;
+        line-height: 1.55;
+      }
+
+      .island-board {
+        position: relative;
+        display: grid;
+        min-height: 620px;
+        padding: 34px;
+        overflow: hidden;
+        align-content: end;
+      }
+
+      .island-board::before {
+        position: absolute;
+        inset: 58px 40px auto auto;
+        width: 410px;
+        height: 252px;
+        content: "";
+        border: 3px solid rgba(85, 116, 58, 0.32);
+        border-radius: 52% 48% 42% 58% / 42% 38% 62% 58%;
+        transform: rotate(-12deg);
+        background:
+          radial-gradient(
+            circle at 28% 38%,
+            rgba(85, 116, 58, 0.18),
+            transparent 16%
+          ),
+          radial-gradient(
+            circle at 64% 62%,
+            rgba(0, 23, 193, 0.12),
+            transparent 20%
+          ),
+          rgba(255, 253, 250, 0.56);
+      }
+
+      .island-board::after {
+        position: absolute;
+        top: 198px;
+        right: 118px;
+        width: 300px;
+        height: 100px;
+        content: "";
+        border-top: 2px dashed rgba(0, 23, 193, 0.38);
+        transform: rotate(-11deg);
+      }
+
+      .model-loop {
+        position: relative;
+        display: grid;
+        gap: 14px;
+        max-width: 420px;
+        margin-left: auto;
+      }
+
+      .loop-item {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+        align-items: center;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 250, 0.9);
+      }
+
+      .loop-num {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--ink);
+        color: var(--white);
+        font-weight: 800;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .loop-item strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .loop-item span {
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .three-layer {
+        grid-template-rows: auto 1fr;
+        gap: 34px;
+      }
+
+      .issue-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .issue-card {
+        display: grid;
+        min-height: 480px;
+        padding: 26px;
+        align-content: space-between;
+      }
+
+      .issue-card h3 {
+        font-size: 1.65rem;
+        line-height: 1.3;
+      }
+
+      .issue-list {
+        display: grid;
+        gap: 13px;
+      }
+
+      .issue-list li {
+        display: grid;
+        grid-template-columns: 10px 1fr;
+        gap: 10px;
+        color: var(--body);
+        font-size: 0.96rem;
+        line-height: 1.58;
+      }
+
+      .issue-list li::before {
+        width: 8px;
+        height: 8px;
+        margin-top: 8px;
+        content: "";
+        border-radius: 50%;
+        background: var(--blue);
+      }
+
+      .issue-card:nth-child(2) .issue-list li::before {
+        background: var(--orange);
+      }
+
+      .issue-card:nth-child(3) .issue-list li::before {
+        background: var(--olive);
+      }
+
+      .strategy-slide {
+        grid-template-rows: auto 1fr;
+        gap: 30px;
+      }
+
+      .two-lanes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      .lane {
+        display: grid;
+        padding: 28px;
+        gap: 20px;
+        align-content: start;
+      }
+
+      .lane h3 {
+        color: var(--ink);
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      .lane.dark h3,
+      .lane.dark .lane-point strong {
+        color: #fffdfa;
+      }
+
+      .lane.dark .lane-point span,
+      .lane.dark .fine {
+        color: rgba(248, 250, 252, 0.74);
+      }
+
+      .lane-point {
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        gap: 14px;
+        align-items: start;
+        padding: 16px 0;
+        border-top: 1px solid rgba(6, 27, 49, 0.12);
+      }
+
+      .lane.dark .lane-point {
+        border-top-color: rgba(255, 255, 255, 0.13);
+      }
+
+      .lane-icon {
+        display: grid;
+        width: 52px;
+        height: 52px;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--blue-soft);
+        color: var(--blue);
+        font-size: 1.45rem;
+        font-weight: 800;
+      }
+
+      .lane.dark .lane-icon {
+        background: rgba(255, 255, 255, 0.08);
+        color: #cdd6ff;
+      }
+
+      .lane-point strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--ink);
+        font-size: 1.02rem;
+      }
+
+      .lane-point span {
+        color: var(--body);
+        font-size: 0.9rem;
+        line-height: 1.56;
+      }
+
+      .target-slide {
+        grid-template-rows: auto 1fr;
+        gap: 26px;
+      }
+
+      .target-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .target-card {
+        display: grid;
+        padding: 24px;
+        gap: 18px;
+        align-content: start;
+      }
+
+      .target-card.primary {
+        grid-row: span 2;
+        color: #fffdfa;
+        border-color: rgba(255, 255, 255, 0.12);
+        background:
+          linear-gradient(155deg, rgba(6, 27, 49, 0.96), rgba(0, 23, 193, 0.9)),
+          var(--ink);
+      }
+
+      .target-card h3 {
+        font-size: 1.55rem;
+        line-height: 1.25;
+      }
+
+      .target-card.primary h3 {
+        font-size: 2.15rem;
+      }
+
+      .target-card p {
+        color: var(--body);
+        font-size: 0.94rem;
+        line-height: 1.65;
+      }
+
+      .target-card.primary p,
+      .target-card.primary .need-list li {
+        color: rgba(255, 253, 250, 0.78);
+      }
+
+      .need-list {
+        display: grid;
+        gap: 9px;
+      }
+
+      .need-list li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 9px 0;
+        border-top: 1px solid rgba(6, 27, 49, 0.1);
+        color: var(--body);
+        font-size: 0.88rem;
+      }
+
+      .target-card.primary .need-list li {
+        border-top-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .scheme-slide {
+        grid-template-rows: auto 1fr;
+        gap: 28px;
+      }
+
+      .scheme-map {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .scheme-map::before,
+      .scheme-map::after {
+        position: absolute;
+        inset: 50% 13% auto;
+        height: 2px;
+        content: "";
+        background: linear-gradient(
+          90deg,
+          var(--blue),
+          var(--olive),
+          var(--orange)
+        );
+      }
+
+      .scheme-map::after {
+        inset: 22% auto 22% 50%;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(
+          180deg,
+          var(--olive),
+          var(--blue),
+          var(--orange)
+        );
+      }
+
+      .node {
+        display: grid;
+        min-height: 198px;
+        padding: 22px;
+        gap: 14px;
+        align-content: start;
+      }
+
+      .node h3 {
+        font-size: 1.36rem;
+      }
+
+      .node p {
+        color: var(--body);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .node.center {
+        z-index: 2;
+        min-height: 238px;
+        color: #fffdfa;
+        background: var(--ink);
+      }
+
+      .node.center p {
+        color: rgba(255, 253, 250, 0.76);
+      }
+
+      .flow-slide {
+        grid-template-rows: auto 1fr;
+        gap: 26px;
+      }
+
+      .flow-track {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        align-items: stretch;
+      }
+
+      .flow-step {
+        position: relative;
+        display: grid;
+        min-height: 470px;
+        padding: 24px 20px;
+        align-content: space-between;
+        overflow: hidden;
+      }
+
+      .flow-step::after {
+        position: absolute;
+        top: 42px;
+        right: -18px;
+        width: 34px;
+        height: 2px;
+        content: "";
+        background: var(--line-strong);
+      }
+
+      .flow-step:last-child::after {
+        display: none;
+      }
+
+      .step-num {
+        color: var(--blue);
+        font-size: 3.4rem;
+        font-weight: 900;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .flow-step h3 {
+        margin-top: 18px;
+        font-size: 1.25rem;
+        line-height: 1.28;
+      }
+
+      .flow-step p {
+        color: var(--body);
+        font-size: 0.84rem;
+        line-height: 1.6;
+      }
+
+      .deliverable {
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+      }
+
+      .menu-slide {
+        grid-template-rows: auto 1fr;
+        gap: 26px;
+      }
+
+      .menu-board {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .menu-column {
+        display: grid;
+        padding: 24px;
+        gap: 18px;
+        align-content: start;
+      }
+
+      .menu-column h3 {
+        font-size: 1.75rem;
+      }
+
+      .menu-item {
+        display: grid;
+        gap: 7px;
+        padding: 16px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .menu-item strong {
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .menu-item span {
+        color: var(--body);
+        font-size: 0.86rem;
+        line-height: 1.55;
+      }
+
+      .revenue-slide {
+        grid-template-rows: auto 1fr;
+        gap: 26px;
+      }
+
+      .revenue-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      .range-panel {
+        display: grid;
+        padding: 30px;
+        align-content: space-between;
+      }
+
+      .range-hero {
+        display: grid;
+        gap: 16px;
+      }
+
+      .range-hero .metric {
+        color: var(--ink);
+        font-size: 4.4rem;
+        line-height: 1;
+      }
+
+      .range-bar {
+        position: relative;
+        height: 44px;
+        margin: 24px 0;
+        border-radius: 6px;
+        background:
+          linear-gradient(
+            90deg,
+            var(--blue) 0%,
+            var(--olive) 52%,
+            var(--orange) 100%
+          ),
+          var(--paper-deep);
+      }
+
+      .range-bar::before,
+      .range-bar::after {
+        position: absolute;
+        top: calc(100% + 8px);
+        color: var(--body);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .range-bar::before {
+        left: 0;
+        content: "20万円";
+      }
+
+      .range-bar::after {
+        right: 0;
+        content: "60万円";
+      }
+
+      .scenario-table {
+        display: grid;
+        gap: 10px;
+        padding: 24px;
+      }
+
+      .scenario-row {
+        display: grid;
+        grid-template-columns: 1.1fr 0.8fr 0.9fr;
+        gap: 10px;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .scenario-row:last-child {
+        border-bottom: 0;
+      }
+
+      .scenario-row span {
+        color: var(--body);
+        font-size: 0.9rem;
+      }
+
+      .scenario-row strong {
+        font-size: 1.05rem;
+      }
+
+      .success-slide {
+        grid-template-rows: auto 1fr;
+        gap: 24px;
+      }
+
+      .success-board {
+        display: grid;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 26px;
+        align-items: center;
+      }
+
+      .triangle {
+        position: relative;
+        min-height: 510px;
+      }
+
+      .triangle::before {
+        position: absolute;
+        inset: 52px 34px 56px;
+        content: "";
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+        background:
+          linear-gradient(
+            145deg,
+            rgba(0, 23, 193, 0.1),
+            rgba(85, 116, 58, 0.14)
+          ),
+          rgba(255, 253, 250, 0.66);
+        border: 1px solid var(--line);
+      }
+
+      .triangle-label {
+        position: absolute;
+        display: grid;
+        width: 178px;
+        min-height: 104px;
+        place-items: center;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .triangle-label strong {
+        color: var(--ink);
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+
+      .triangle-label.top {
+        top: 0;
+        left: calc(50% - 89px);
+      }
+
+      .triangle-label.left {
+        bottom: 8px;
+        left: 0;
+      }
+
+      .triangle-label.right {
+        right: 0;
+        bottom: 8px;
+      }
+
+      .moat-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .moat-item {
+        display: grid;
+        grid-template-columns: 128px 1fr;
+        gap: 18px;
+        align-items: center;
+        padding: 18px;
+      }
+
+      .moat-item h3 {
+        font-size: 1.12rem;
+      }
+
+      .moat-item p {
+        color: var(--body);
+        font-size: 0.9rem;
+        line-height: 1.58;
+      }
+
+      .risk-slide {
+        grid-template-rows: auto 1fr;
+        gap: 24px;
+      }
+
+      .risk-matrix {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+      }
+
+      .risk-card {
+        display: grid;
+        min-height: 500px;
+        padding: 24px;
+        align-content: space-between;
+      }
+
+      .risk-card h3 {
+        color: var(--red);
+        font-size: 1.45rem;
+        line-height: 1.3;
+      }
+
+      .risk-card p {
+        color: var(--body);
+        font-size: 0.9rem;
+        line-height: 1.58;
+      }
+
+      .countermeasure {
+        display: grid;
+        gap: 8px;
+        padding: 16px;
+        border-radius: 6px;
+        background: var(--blue-soft);
+      }
+
+      .countermeasure strong {
+        color: var(--blue);
+        font-size: 0.9rem;
+      }
+
+      .countermeasure span {
+        color: var(--body);
+        font-size: 0.86rem;
+        line-height: 1.52;
+      }
+
+      .vision-slide {
+        grid-template-rows: auto 1fr;
+        gap: 26px;
+      }
+
+      .vision-road {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        align-items: stretch;
+      }
+
+      .vision-step {
+        display: grid;
+        min-height: 480px;
+        padding: 24px;
+        align-content: space-between;
+      }
+
+      .vision-step h3 {
+        font-size: 1.35rem;
+        line-height: 1.3;
+      }
+
+      .vision-step p {
+        color: var(--body);
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+
+      .vision-step .metric {
+        font-size: 2.4rem;
+      }
+
+      .action-slide {
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        gap: 24px;
+      }
+
+      .action-board {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+      }
+
+      .action-column {
+        display: grid;
+        min-height: 0;
+        padding: 24px;
+        align-content: start;
+        gap: 18px;
+      }
+
+      .action-column h3 {
+        font-size: 2rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .task-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .task-list li {
+        display: grid;
+        gap: 4px;
+        padding: 12px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .task-list strong {
+        color: var(--ink);
+        font-size: 0.96rem;
+      }
+
+      .task-list span {
+        color: var(--body);
+        font-size: 0.82rem;
+        line-height: 1.48;
+      }
+
+      .decision-strip {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 16px;
+        align-items: center;
+        padding: 14px 18px;
+        border: 1px solid rgba(0, 23, 193, 0.25);
+        border-radius: 8px;
+        background: rgba(0, 23, 193, 0.07);
+      }
+
+      .decision-strip strong {
+        color: var(--blue);
+        font-size: 0.92rem;
+      }
+
+      .decision-strip span {
+        color: var(--body);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .source-note {
+        justify-self: start;
+        color: rgba(6, 27, 49, 0.5);
+        font-size: 0.72rem;
+      }
+
+      .slide-preview-rail {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        width: 18px;
+        height: min(76vh, 820px);
+        align-items: center;
+        justify-content: flex-end;
+        overflow: visible;
+        transform: translateY(-50%);
+      }
+
+      .slide-preview-edge {
+        display: flex;
+        width: 100%;
+        min-width: 18px;
+        height: 136px;
+        align-items: center;
+        justify-content: center;
+        color: #fffdfa;
+        cursor: pointer;
+        background: linear-gradient(180deg, var(--blue), var(--ink));
+        border: none;
+        border-radius: 18px 0 0 18px;
+        box-shadow: 0 12px 28px rgba(6, 27, 49, 0.22);
+        opacity: 0.72;
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease;
+      }
+
+      .slide-preview-edge-label {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        writing-mode: vertical-rl;
+      }
+
+      .slide-preview-panel {
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 14px;
+        width: min(360px, 34vw);
+        max-height: min(76vh, 820px);
+        padding: 16px 12px 16px 16px;
+        overflow: hidden;
+        overscroll-behavior: contain;
+        pointer-events: none;
+        background: rgba(247, 244, 236, 0.95);
+        border: 1px solid rgba(6, 27, 49, 0.1);
+        border-radius: 18px 0 0 18px;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        transform: translate(24px, -50%);
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease;
+        backdrop-filter: blur(18px);
+      }
+
+      .slide-preview-rail:is(:hover, :focus-within, .is-open)
+        .slide-preview-panel {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translate(0, -50%);
+      }
+
+      .slide-preview-rail:is(:hover, :focus-within, .is-open)
+        .slide-preview-edge {
+        opacity: 1;
+        transform: translateX(-4px);
+      }
+
+      .slide-preview-head {
+        display: flex;
+        gap: 12px;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      .slide-preview-kicker {
+        color: var(--blue);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .slide-preview-current {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .slide-preview-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-height: 0;
+        padding: 6px 3px 8px 12px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-gutter: stable;
+      }
+
+      .slide-preview-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+        width: 100%;
+        padding: 14px;
+        text-align: left;
+        cursor: pointer;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 253, 250, 0.98),
+          var(--preview-tint)
+        );
+        border: 1px solid rgba(6, 27, 49, 0.1);
+        border-radius: 8px;
+        aspect-ratio: 16 / 9;
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .slide-preview-card:hover,
+      .slide-preview-card:focus-visible {
+        border-color: rgba(0, 23, 193, 0.5);
+        box-shadow: 0 18px 34px rgba(6, 27, 49, 0.14);
+        transform: translateX(-4px);
+      }
+
+      .slide-preview-card.is-active {
+        border-color: rgba(0, 23, 193, 0.72);
+        box-shadow:
+          0 0 0 1px rgba(0, 23, 193, 0.12),
+          0 20px 36px rgba(6, 27, 49, 0.16);
+      }
+
+      .slide-preview-card-num {
+        color: var(--blue);
+        font-size: 1.3rem;
+        font-weight: 800;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .slide-preview-card-meta {
+        display: grid;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      .slide-preview-card-kicker {
+        color: var(--blue);
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .slide-preview-card-title {
+        display: -webkit-box;
+        overflow: hidden;
+        color: var(--ink);
+        font-size: 0.9rem;
+        line-height: 1.35;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .slide-preview-card-summary {
+        display: -webkit-box;
+        overflow: hidden;
+        color: var(--muted);
+        font-size: 0.7rem;
+        line-height: 1.5;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .slide-preview-dots {
+        position: absolute;
+        top: 50%;
+        right: calc(100% + 10px);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transform: translateY(-50%);
+      }
+
+      .slide-preview-dot {
+        width: 8px;
+        height: 8px;
+        cursor: pointer;
+        background: rgba(0, 23, 193, 0.28);
+        border: none;
+        border-radius: 50%;
+        opacity: 0.42;
+        transition:
+          background 0.2s ease,
+          opacity 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .slide-preview-dot.is-active {
+        background: var(--blue);
+        opacity: 1;
+        transform: scale(1.45);
+      }
+
+      @media screen and (max-width: 980px) {
+        .slide {
+          padding: 32px 26px 76px;
+        }
+
+        .hero-slide,
+        .two-lanes,
+        .target-grid,
+        .scheme-map,
+        .flow-track,
+        .menu-board,
+        .revenue-grid,
+        .success-board,
+        .risk-matrix,
+        .vision-road,
+        .action-board,
+        .issue-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .title-block h1 {
+          font-size: 2.7rem;
+        }
+
+        .title-block h2 {
+          font-size: 2.15rem;
+        }
+
+        .flow-step,
+        .issue-card,
+        .risk-card,
+        .vision-step,
+        .action-column {
+          min-height: auto;
+        }
+
+        .target-card.primary {
+          grid-row: auto;
+        }
+
+        .scheme-map::before,
+        .scheme-map::after,
+        .flow-step::after {
+          display: none;
+        }
+
+        .decision-strip {
+          grid-template-columns: 1fr;
+          margin-top: 14px;
+        }
+      }
+
+      @media screen and (min-width: 981px) and (max-height: 820px) {
+        .slide {
+          padding: 34px 52px 36px;
+        }
+
+        .slide::before {
+          inset: 18px 20px;
+        }
+
+        .title-block {
+          gap: 10px;
+        }
+
+        .title-block h1 {
+          font-size: 3.72rem;
+        }
+
+        .title-block h2 {
+          font-size: 2.56rem;
+          line-height: 1.08;
+        }
+
+        .lead {
+          font-size: 1.02rem;
+          line-height: 1.62;
+        }
+
+        .target-slide {
+          gap: 18px;
+        }
+
+        .target-grid {
+          gap: 12px;
+        }
+
+        .target-card {
+          gap: 11px;
+          padding: 17px;
+        }
+
+        .target-card h3 {
+          font-size: 1.22rem;
+        }
+
+        .target-card.primary h3 {
+          font-size: 1.68rem;
+        }
+
+        .target-card p {
+          font-size: 0.82rem;
+          line-height: 1.46;
+        }
+
+        .need-list {
+          gap: 4px;
+        }
+
+        .need-list li {
+          padding: 6px 0;
+          font-size: 0.8rem;
+        }
+      }
+
+      @media screen and (hover: none),
+        screen and (pointer: coarse),
+        screen and (max-width: 640px) {
+        .slide-preview-rail {
+          right: 12px;
+          width: auto;
+          height: auto;
+        }
+
+        .slide-preview-edge,
+        .slide-preview-panel {
+          display: none;
+        }
+
+        .slide-preview-dots {
+          position: static;
+          transform: none;
+        }
+      }
+
+      @media print {
+        @page {
+          size: var(--print-page-width) var(--print-page-height);
+          margin: 0;
+        }
+
+        html,
+        body {
+          height: auto !important;
+          min-height: 0 !important;
+          overflow: visible !important;
+          background: var(--paper) !important;
+        }
+
+        body {
+          scroll-snap-type: none !important;
+        }
+
+        .slide {
+          display: grid !important;
+          width: var(--print-page-width) !important;
+          height: var(--print-page-height) !important;
+          min-height: var(--print-page-height) !important;
+          padding: 42px 64px 44px !important;
+          overflow: hidden !important;
+          break-after: page !important;
+          page-break-after: always !important;
+          scroll-snap-align: none !important;
+        }
+
+        .hero-slide {
+          grid-template-columns: 1.05fr 0.95fr !important;
+          gap: 46px !important;
+          align-items: center !important;
+        }
+
+        .three-layer,
+        .strategy-slide,
+        .target-slide,
+        .scheme-slide,
+        .flow-slide,
+        .menu-slide,
+        .revenue-slide,
+        .success-slide,
+        .risk-slide,
+        .vision-slide,
+        .action-slide {
+          grid-template-rows: auto minmax(0, 1fr) auto !important;
+        }
+
+        .issue-grid,
+        .menu-board,
+        .risk-matrix,
+        .action-board {
+          display: grid !important;
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        .two-lanes,
+        .revenue-grid,
+        .success-board {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr !important;
+        }
+
+        .target-grid {
+          display: grid !important;
+          grid-template-columns: 1.2fr 1fr 1fr !important;
+          grid-template-rows: 1fr 1fr !important;
+        }
+
+        .target-card.primary {
+          grid-row: span 2 !important;
+        }
+
+        .scheme-map {
+          display: grid !important;
+          grid-template-columns: repeat(3, 1fr) !important;
+          grid-template-rows: 1fr 1fr !important;
+        }
+
+        .flow-track {
+          display: grid !important;
+          grid-template-columns: repeat(5, 1fr) !important;
+        }
+
+        .vision-road {
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+        }
+
+        .slide-preview-rail {
+          display: none !important;
+        }
+
+        .pdf-export-rail {
+          display: none !important;
+        }
+
+        html[data-print-mode="current"]
+          .slide[data-pdf-slide="true"][data-print-active="true"],
+        html[data-print-mode="all"] .slide[data-pdf-slide="true"] {
+          display: grid !important;
+        }
+      }
+
+      .pdf-export-rail {
+        overflow: visible;
+      }
+
+      html.slide-pdf-export body main .slide[data-slide-export-active="true"] {
+        display: grid !important;
+      }
+    </style>
+  </head>
+  <body>
+    <aside
+      class="slide-preview-rail"
+      id="slidePreviewRail"
+      aria-label="Slide navigation"
+    >
+      <div class="slide-preview-dots" id="slidePreviewDots"></div>
+      <div class="slide-preview-panel" id="slidePreviewPanel">
+        <div class="slide-preview-head">
+          <span class="slide-preview-kicker">Slides</span>
+          <span class="slide-preview-current" id="slidePreviewCurrent"
+            >01 / 12</span
+          >
+        </div>
+        <div class="slide-preview-list" id="slidePreviewList"></div>
+      </div>
+      <button
+        class="slide-preview-edge"
+        id="slidePreviewEdge"
+        type="button"
+        aria-label="Open slide previews"
+        aria-expanded="false"
+        aria-controls="slidePreviewPanel"
+      >
+        <span class="slide-preview-edge-label">Slides</span>
+      </button>
+    </aside>
+
+    <main>
+      <section
+        class="slide hero-slide"
+        id="slide-01"
+        data-slide-title="小豆島ビジネス構想"
+        data-slide-kicker="Concept"
+        data-slide-summary="人材で信頼を作り、ユニフォーム販売で収益化する事業モデル。"
+      >
+        <div class="hero-copy">
+          <div class="slide-header">
+            <span class="kicker">New Business Proposal</span>
+            <span class="slide-number">01 / 12</span>
+          </div>
+          <div class="title-block">
+            <h1>小豆島ビジネス構想</h1>
+            <p class="lead">
+              人材支援を入口に企業との信頼接点をつくり、現場課題に即したユニフォーム提案で収益化する。
+            </p>
+          </div>
+          <div class="hero-thesis">
+            <div class="thesis-card">
+              <strong>信頼で入る</strong>
+              <span
+                >技能実習生・外国人材の相談を無料で受け、企業課題の中心に入る。</span
+              >
+            </div>
+            <div class="thesis-card">
+              <strong>現場を見る</strong>
+              <span
+                >職種、季節、サイズ、言語対応を把握し、制服需要を具体化する。</span
+              >
+            </div>
+            <div class="thesis-card">
+              <strong>収益で回す</strong>
+              <span
+                >入社セット、空調服、追加発注を継続商材にして事業化する。</span
+              >
+            </div>
+          </div>
+          <span class="source-note"
+            >Source: shodoshima_business.pptx をもとに会議用に再構成</span
+          >
+        </div>
+        <div class="panel island-board">
+          <div class="model-loop">
+            <div class="loop-item">
+              <span class="loop-num">1</span>
+              <div>
+                <strong>人材相談</strong>
+                <span>無料接点で受入企業の課題を聞く</span>
+              </div>
+            </div>
+            <div class="loop-item">
+              <span class="loop-num">2</span>
+              <div>
+                <strong>企業紹介</strong>
+                <span>監理団体・企業ネットワークへ入る</span>
+              </div>
+            </div>
+            <div class="loop-item">
+              <span class="loop-num">3</span>
+              <div>
+                <strong>制服提案</strong>
+                <span>現場単位の装備・サイズ・季節需要へ展開</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="slide three-layer"
+        id="slide-02"
+        data-slide-title="なぜ今か"
+        data-slide-kicker="Context"
+        data-slide-summary="地域課題、企業課題、事業機会の3層で背景を整理。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Context</span>
+            <h2>人が足りない島で、企業支援の入口を作る</h2>
+            <p class="lead">
+              人手不足と高齢化は単なる採用課題ではなく、現場運営・教育・定着・備品管理まで連鎖する。
+            </p>
+          </div>
+          <span class="slide-number">02 / 12</span>
+        </div>
+        <div class="issue-grid">
+          <article class="panel issue-card">
+            <span class="tag blue">地域課題</span>
+            <h3>働き手の母数が縮む</h3>
+            <ul class="issue-list">
+              <li>島内採用だけでは季節波動や欠員補充に対応しにくい。</li>
+              <li>
+                高齢化により、食品加工・観光・建設などの現場維持が重くなる。
+              </li>
+              <li>人材流入の仕組みが弱いと、企業の成長余地が先に詰まる。</li>
+            </ul>
+            <p class="fine">論点: 地域全体の雇用インフラとして入り込めるか。</p>
+          </article>
+          <article class="panel issue-card">
+            <span class="tag orange">企業課題</span>
+            <h3>会社はあるが、人がいない</h3>
+            <ul class="issue-list">
+              <li>
+                技能実習生受入は制度・生活・言語・現場管理がセットで発生する。
+              </li>
+              <li>
+                入社時の制服、サイズ、追加発注、季節装備の管理が属人化しやすい。
+              </li>
+              <li>
+                単品販売ではなく、入社準備の業務負担を下げる提案が刺さる。
+              </li>
+            </ul>
+            <p class="fine">論点: 人材相談から購買担当へ自然に接続できるか。</p>
+          </article>
+          <article class="panel issue-card">
+            <span class="tag olive">事業機会</span>
+            <h3>信頼接点を収益接点に変える</h3>
+            <ul class="issue-list">
+              <li>
+                無料支援は短期収益ではなく、初回訪問の突破口として位置づける。
+              </li>
+              <li>
+                制服は人数増・入替・季節品で継続需要があり、事業化しやすい。
+              </li>
+              <li>島内ネットワーク化できれば、紹介営業の効率が上がる。</li>
+            </ul>
+            <p class="fine">論点: まず何社で勝ちパターンを作るか。</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide strategy-slide"
+        id="slide-03"
+        data-slide-title="基本戦略"
+        data-slide-kicker="Strategy"
+        data-slide-summary="人材は無料の入口、制服は収益エンジンとして役割を分ける。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Strategy</span>
+            <h2>無料で信頼を取り、有料で現場を支える</h2>
+            <p class="lead">
+              事業の肝は、人材支援とユニフォーム販売を混ぜずに、役割を分けて連動させること。
+            </p>
+          </div>
+          <span class="slide-number">03 / 12</span>
+        </div>
+        <div class="two-lanes">
+          <article class="panel lane">
+            <span class="tag blue">Trust Entry</span>
+            <h3>人材 = 無料で繋ぐ</h3>
+            <div class="lane-point">
+              <span class="lane-icon">聞</span>
+              <div>
+                <strong>採用・受入の相談窓口</strong>
+                <span
+                  >企業の人手不足、受入体制、現場の困りごとを先に把握する。</span
+                >
+              </div>
+            </div>
+            <div class="lane-point">
+              <span class="lane-icon">橋</span>
+              <div>
+                <strong>監理団体との接続</strong>
+                <span
+                  >人材そのものではなく、紹介と情報整理で信頼を獲得する。</span
+                >
+              </div>
+            </div>
+            <div class="lane-point">
+              <span class="lane-icon">場</span>
+              <div>
+                <strong>現場に入る理由を作る</strong>
+                <span
+                  >採用相談をきっかけに、職場環境・装備・安全面を確認する。</span
+                >
+              </div>
+            </div>
+          </article>
+          <article class="panel dark lane">
+            <span class="tag orange">Revenue Engine</span>
+            <h3>制服 = 販売で収益</h3>
+            <div class="lane-point">
+              <span class="lane-icon">初</span>
+              <div>
+                <strong>入社セット販売</strong>
+                <span
+                  >初回配属時に必要な作業服、靴、帽子、防寒具をパッケージ化する。</span
+                >
+              </div>
+            </div>
+            <div class="lane-point">
+              <span class="lane-icon">管</span>
+              <div>
+                <strong>サイズ・追加発注管理</strong>
+                <span
+                  >外国人材の入替や人数増に合わせて継続発注を取りにいく。</span
+                >
+              </div>
+            </div>
+            <div class="lane-point">
+              <span class="lane-icon">季</span>
+              <div>
+                <strong>季節商材の提案</strong>
+                <span
+                  >空調服、防寒着、雨具などを現場課題に沿って提案する。</span
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide target-slide"
+        id="slide-04"
+        data-slide-title="ターゲット企業"
+        data-slide-kicker="Target"
+        data-slide-summary="技能実習生受入企業を中心に、食品・製造、建設、観光へ展開。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Target</span>
+            <h2>優先ターゲットは「人が増える現場」</h2>
+            <p class="lead">
+              外国人材の受入がある企業は、入社準備と現場装備の課題が同時に発生しやすい。
+            </p>
+          </div>
+          <span class="slide-number">04 / 12</span>
+        </div>
+        <div class="target-grid">
+          <article class="panel target-card primary">
+            <span class="tag blue">Priority 1</span>
+            <h3>技能実習生受入企業</h3>
+            <p>
+              人材相談と制服需要が最も近い層。受入前後の準備物、サイズ確認、言語対応、生活立ち上げまで相談が広がりやすい。
+            </p>
+            <ul class="need-list">
+              <li><span>入社セット</span><strong>初回一括</strong></li>
+              <li><span>サイズ管理</span><strong>継続</strong></li>
+              <li><span>外国語対応</span><strong>差別化</strong></li>
+              <li><span>現場安全</span><strong>提案余地</strong></li>
+            </ul>
+          </article>
+          <article class="panel target-card">
+            <span class="tag olive">食品・製造</span>
+            <h3>衛生・耐久・入替頻度</h3>
+            <p>
+              食品加工や製造現場は、制服の規格、衛生、洗替、追加発注が発生しやすい。
+            </p>
+            <ul class="need-list">
+              <li><span>白衣・帽子</span><strong>衛生</strong></li>
+              <li><span>安全靴</span><strong>標準化</strong></li>
+            </ul>
+          </article>
+          <article class="panel target-card">
+            <span class="tag orange">建設</span>
+            <h3>安全・季節対応</h3>
+            <p>
+              安全ベスト、空調服、防寒着など、現場環境に合わせた高単価提案がしやすい。
+            </p>
+            <ul class="need-list">
+              <li><span>空調服</span><strong>夏季</strong></li>
+              <li><span>防寒着</span><strong>冬季</strong></li>
+            </ul>
+          </article>
+          <article class="panel target-card">
+            <span class="tag blue">観光</span>
+            <h3>接客品質・見た目</h3>
+            <p>
+              旅館、飲食、土産店などでは、機能性に加えて印象統一の価値を出せる。
+            </p>
+            <ul class="need-list">
+              <li><span>接客服</span><strong>印象</strong></li>
+              <li><span>多言語名札</span><strong>対応</strong></li>
+            </ul>
+          </article>
+          <article class="panel target-card">
+            <span class="tag red">除外しない層</span>
+            <h3>人材不足が顕在化した企業</h3>
+            <p>技能実習生受入前でも、人材相談があれば初回接点として扱う。</p>
+            <ul class="need-list">
+              <li><span>相談段階</span><strong>育成</strong></li>
+              <li><span>紹介経由</span><strong>開拓</strong></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide scheme-slide"
+        id="slide-05"
+        data-slide-title="ビジネススキーム"
+        data-slide-kicker="Scheme"
+        data-slide-summary="監理団体、企業、外国人材、ユニフォーム供給を接続する。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Scheme</span>
+            <h2>人材の流れと商材の流れを分けて設計する</h2>
+            <p class="lead">
+              無料接点の信頼を保つため、紹介支援と制服販売は説明・契約・請求を分離する。
+            </p>
+          </div>
+          <span class="slide-number">05 / 12</span>
+        </div>
+        <div class="scheme-map">
+          <article class="panel node">
+            <span class="tag blue">Partner</span>
+            <h3>監理団体</h3>
+            <p>
+              受入企業の紹介、制度面の確認、候補企業の温度感把握を担う重要な入口。
+            </p>
+          </article>
+          <article class="panel node center">
+            <span class="tag orange">Our Role</span>
+            <h3>事業窓口</h3>
+            <p>
+              人材相談、企業訪問、現場把握、制服提案を一気通貫で進めるハブ。
+            </p>
+          </article>
+          <article class="panel node">
+            <span class="tag olive">Customer</span>
+            <h3>受入企業</h3>
+            <p>
+              採用・定着・現場準備の負担を抱える。購買担当や現場責任者との接点が鍵。
+            </p>
+          </article>
+          <article class="panel node">
+            <span class="tag olive">People</span>
+            <h3>外国人材</h3>
+            <p>
+              入社時のサイズ確認、職種別装備、言語面の不安を減らす支援対象。
+            </p>
+          </article>
+          <article class="panel node">
+            <span class="tag orange">Supply</span>
+            <h3>ユニフォーム供給</h3>
+            <p>
+              入社セット、空調服、防寒着、追加発注を企業単位で管理する収益源。
+            </p>
+          </article>
+          <article class="panel node">
+            <span class="tag blue">Feedback</span>
+            <h3>現場データ</h3>
+            <p>人数、職種、季節、サイズ、追加購入履歴を次回提案に活かす。</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide flow-slide"
+        id="slide-06"
+        data-slide-title="営業フロー"
+        data-slide-kicker="Sales Flow"
+        data-slide-summary="団体提案から継続発注まで、5ステップで営業導線を設計。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Sales Flow</span>
+            <h2>紹介営業を、再現できるプロセスにする</h2>
+            <p class="lead">
+              初回接触から提案までを分解し、各段階で次に進むための成果物を明確にする。
+            </p>
+          </div>
+          <span class="slide-number">06 / 12</span>
+        </div>
+        <div class="flow-track">
+          <article class="panel flow-step">
+            <div>
+              <span class="step-num">01</span>
+              <h3>団体へ提案</h3>
+              <p>
+                監理団体に、人材相談を無料でつなぐ地域支援の位置づけを説明する。
+              </p>
+            </div>
+            <div class="deliverable">
+              <span class="tag blue">成果物: 紹介依頼リスト</span>
+            </div>
+          </article>
+          <article class="panel flow-step">
+            <div>
+              <span class="step-num">02</span>
+              <h3>企業へ人材話</h3>
+              <p>
+                採用課題を聞き、現場人数、職種、受入予定、困りごとを整理する。
+              </p>
+            </div>
+            <div class="deliverable">
+              <span class="tag olive">成果物: 現場ヒアリング票</span>
+            </div>
+          </article>
+          <article class="panel flow-step">
+            <div>
+              <span class="step-num">03</span>
+              <h3>現場入り</h3>
+              <p>安全、衛生、季節、制服管理の課題を現物ベースで確認する。</p>
+            </div>
+            <div class="deliverable">
+              <span class="tag orange">成果物: 課題メモ</span>
+            </div>
+          </article>
+          <article class="panel flow-step">
+            <div>
+              <span class="step-num">04</span>
+              <h3>制服提案</h3>
+              <p>入社セットと季節商材を、人数・単価・納期を含めて提示する。</p>
+            </div>
+            <div class="deliverable">
+              <span class="tag blue">成果物: 見積・サンプル</span>
+            </div>
+          </article>
+          <article class="panel flow-step">
+            <div>
+              <span class="step-num">05</span>
+              <h3>継続発注</h3>
+              <p>
+                追加人数、サイズ変更、季節更新を定期接点化して次回注文につなげる。
+              </p>
+            </div>
+            <div class="deliverable">
+              <span class="tag olive">成果物: 発注履歴</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide menu-slide"
+        id="slide-07"
+        data-slide-title="提案メニュー"
+        data-slide-kicker="Offer"
+        data-slide-summary="入社セット、サイズ管理、外国人対応、空調服を商品群に整理。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Offer</span>
+            <h2>売るのは制服ではなく、入社準備の手離れ</h2>
+            <p class="lead">
+              単品販売から始めず、企業の運用負担を下げるメニューとして見せる。
+            </p>
+          </div>
+          <span class="slide-number">07 / 12</span>
+        </div>
+        <div class="menu-board">
+          <article class="panel menu-column">
+            <span class="tag blue">初回導入</span>
+            <h3>入社セット</h3>
+            <div class="menu-item">
+              <strong>基本制服一式</strong>
+              <span
+                >作業服、帽子、靴、ベルト、名札などを職種別にパッケージ化。</span
+              >
+            </div>
+            <div class="menu-item">
+              <strong>受入前サンプル</strong>
+              <span
+                >企業が発注前に質感とサイズを確認できるサンプルを準備。</span
+              >
+            </div>
+            <div class="menu-item">
+              <strong>初回人数見積</strong>
+              <span
+                >1人単価×人数で予算感を即時提示し、稟議を進めやすくする。</span
+              >
+            </div>
+          </article>
+          <article class="panel menu-column">
+            <span class="tag olive">継続管理</span>
+            <h3>サイズ管理</h3>
+            <div class="menu-item">
+              <strong>個人別サイズ表</strong>
+              <span
+                >入替や追加発注時に、担当者が一から確認しなくてよい状態を作る。</span
+              >
+            </div>
+            <div class="menu-item">
+              <strong>外国人対応</strong>
+              <span
+                >サイズ説明、着用ルール、管理表現を分かりやすく整える。</span
+              >
+            </div>
+            <div class="menu-item">
+              <strong>追加発注導線</strong>
+              <span
+                >人数増・破損・洗替に対して短いリードタイムで対応する。</span
+              >
+            </div>
+          </article>
+          <article class="panel menu-column">
+            <span class="tag orange">季節商材</span>
+            <h3>空調服・防寒</h3>
+            <div class="menu-item">
+              <strong>空調服</strong>
+              <span
+                >夏季の建設・製造現場に、熱中症対策と生産性の文脈で提案。</span
+              >
+            </div>
+            <div class="menu-item">
+              <strong>防寒着・雨具</strong>
+              <span
+                >冬季、屋外、早朝作業など、現場条件に合わせた追加提案。</span
+              >
+            </div>
+            <div class="menu-item">
+              <strong>安全装備</strong>
+              <span>ヘルメット、ベスト、安全靴などを必要に応じて広げる。</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide revenue-slide"
+        id="slide-08"
+        data-slide-title="収益モデル"
+        data-slide-kicker="Revenue"
+        data-slide-summary="1人1〜3万円、20人で20〜60万円、年間500〜1000万円をレンジ化。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Revenue</span>
+            <h2>小さく始めて、企業数と人数で積み上げる</h2>
+            <p class="lead">
+              初回売上は人数連動。年間売上は企業数、追加発注、季節商材の回数で作る。
+            </p>
+          </div>
+          <span class="slide-number">08 / 12</span>
+        </div>
+        <div class="revenue-grid">
+          <article class="panel range-panel">
+            <div class="range-hero">
+              <span class="tag orange">Initial Revenue</span>
+              <strong class="metric">20〜60万円</strong>
+              <p class="lead">
+                20人導入時の初回売上レンジ。1人あたり1〜3万円の入社セットを想定。
+              </p>
+            </div>
+            <div>
+              <div class="range-bar" aria-hidden="true"></div>
+              <p class="fine">
+                低単価は基本セット中心、高単価は安全靴・季節商材・追加備品を含む想定。
+              </p>
+            </div>
+          </article>
+          <article class="panel scenario-table">
+            <span class="tag blue">Annual Scenario</span>
+            <div class="scenario-row">
+              <strong>ミニマム</strong>
+              <span>5社 × 年2回</span>
+              <span class="metric">500万円</span>
+            </div>
+            <div class="scenario-row">
+              <strong>標準</strong>
+              <span>8社 × 入替/季節</span>
+              <span class="metric">750万円</span>
+            </div>
+            <div class="scenario-row">
+              <strong>拡張</strong>
+              <span>10社超 × 継続</span>
+              <span class="metric">1000万円</span>
+            </div>
+            <div class="accent-rule"></div>
+            <p class="lead">
+              年間500〜1000万円は、1社の大型受注よりも「複数社の定期接点」を作れるかで決まる。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide success-slide"
+        id="slide-09"
+        data-slide-title="成功要因"
+        data-slide-kicker="Moat"
+        data-slide-summary="紹介営業、ネットワーク、課題提案型を競争優位の三角形として整理。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Moat</span>
+            <h2>価格ではなく、現場理解で勝つ</h2>
+            <p class="lead">
+              単なる制服販売では価格競争になる。紹介経由で入り、現場課題を翻訳できることが差になる。
+            </p>
+          </div>
+          <span class="slide-number">09 / 12</span>
+        </div>
+        <div class="success-board">
+          <div class="triangle">
+            <div class="panel triangle-label top">
+              <strong>紹介営業</strong>
+            </div>
+            <div class="panel triangle-label left">
+              <strong>ネットワーク</strong>
+            </div>
+            <div class="panel triangle-label right">
+              <strong>課題提案型</strong>
+            </div>
+          </div>
+          <div class="moat-list">
+            <article class="panel moat-item">
+              <span class="tag blue">Trust</span>
+              <div>
+                <h3>紹介営業で初回訪問の壁を下げる</h3>
+                <p>
+                  監理団体・既存企業・地域関係者の紹介により、価格表送付ではなく相談として始める。
+                </p>
+              </div>
+            </article>
+            <article class="panel moat-item">
+              <span class="tag olive">Network</span>
+              <div>
+                <h3>島内企業の横展開を狙う</h3>
+                <p>
+                  1社の成功事例を、同業種・同じ受入課題を持つ企業へ展開し、営業効率を上げる。
+                </p>
+              </div>
+            </article>
+            <article class="panel moat-item">
+              <span class="tag orange">Proposal</span>
+              <div>
+                <h3>作業服ではなく課題解決として提案</h3>
+                <p>
+                  サイズ管理、言語対応、季節対策、安全面まで含め、購買担当と現場責任者の両方に刺す。
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="slide risk-slide"
+        id="slide-10"
+        data-slide-title="リスクと対策"
+        data-slide-kicker="Risk"
+        data-slide-summary="無料で終わる、価格競争、法的分離の3リスクと対策。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Risk Control</span>
+            <h2>無料支援を、収益に接続する設計が必要</h2>
+            <p class="lead">
+              リスクは避けるものではなく、営業設計と説明分離で管理する。
+            </p>
+          </div>
+          <span class="slide-number">10 / 12</span>
+        </div>
+        <div class="risk-matrix">
+          <article class="panel risk-card">
+            <div>
+              <span class="tag red">Risk 1</span>
+              <h3>無料で終わる</h3>
+              <p>
+                人材相談だけで終わり、制服提案につながらない。善意の相談窓口になってしまう。
+              </p>
+            </div>
+            <div class="countermeasure">
+              <strong>対策: 現場入りを条件化</strong>
+              <span
+                >相談後に現場確認、人数、職種、制服状況のヒアリングを必ず入れる。</span
+              >
+            </div>
+          </article>
+          <article class="panel risk-card">
+            <div>
+              <span class="tag red">Risk 2</span>
+              <h3>価格競争になる</h3>
+              <p>
+                制服だけを比較されると、既存業者や通販との価格差で判断される。
+              </p>
+            </div>
+            <div class="countermeasure">
+              <strong>対策: 提案力を商品化</strong>
+              <span
+                >入社準備、サイズ表、外国人対応、季節提案を含めた運用価値で比較軸を変える。</span
+              >
+            </div>
+          </article>
+          <article class="panel risk-card">
+            <div>
+              <span class="tag red">Risk 3</span>
+              <h3>法的・説明リスク</h3>
+              <p>
+                人材紹介と物販の関係が曖昧だと、手数料や紹介行為の誤解を招く。
+              </p>
+            </div>
+            <div class="countermeasure">
+              <strong>対策: 契約と説明を分離</strong>
+              <span
+                >人材相談は無料支援、ユニフォームは別見積・別契約として明確に扱う。</span
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide vision-slide"
+        id="slide-11"
+        data-slide-title="ビジョン"
+        data-slide-kicker="Vision"
+        data-slide-summary="小豆島モデルを構築し、人が入る島へ広げる。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Vision</span>
+            <h2>小豆島モデルを作り、人が入る島へ</h2>
+            <p class="lead">
+              ユニフォーム販売は収益源であり、最終的には地域の人材受入インフラを支える入口になる。
+            </p>
+          </div>
+          <span class="slide-number">11 / 12</span>
+        </div>
+        <div class="vision-road">
+          <article class="panel vision-step">
+            <span class="metric">01</span>
+            <div>
+              <h3>1社目の成功事例</h3>
+              <p>
+                受入企業で入社セットとサイズ管理を導入し、効果と発注フローを可視化する。
+              </p>
+            </div>
+            <span class="tag blue">Proof</span>
+          </article>
+          <article class="panel vision-step">
+            <span class="metric">02</span>
+            <div>
+              <h3>同業種へ横展開</h3>
+              <p>
+                食品・製造、建設、観光の中で、似た課題を持つ企業に紹介ベースで展開する。
+              </p>
+            </div>
+            <span class="tag olive">Repeat</span>
+          </article>
+          <article class="panel vision-step">
+            <span class="metric">03</span>
+            <div>
+              <h3>受入支援の標準化</h3>
+              <p>
+                ヒアリング票、見積テンプレート、サイズ表、サンプル運用を標準化する。
+              </p>
+            </div>
+            <span class="tag orange">System</span>
+          </article>
+          <article class="panel vision-step dark">
+            <span class="metric">04</span>
+            <div>
+              <h3>人材流入の地域基盤</h3>
+              <p>
+                企業の受入負担を下げ、働き手が入りやすい島としての循環を作る。
+              </p>
+            </div>
+            <span class="tag blue">Island Model</span>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="slide action-slide"
+        id="slide-12"
+        data-slide-title="直近アクション"
+        data-slide-kicker="Next Action"
+        data-slide-summary="団体接触、企業リスト、1社目獲得、サンプル準備を90日で進める。"
+      >
+        <div class="slide-header">
+          <div class="title-block">
+            <span class="kicker">Next Action</span>
+            <h2>90日で、最初の勝ち筋を作る</h2>
+            <p class="lead">
+              初期フェーズは売上最大化より、再現できる営業導線と1社目の実績づくりを優先する。
+            </p>
+          </div>
+          <span class="slide-number">12 / 12</span>
+        </div>
+        <div class="action-board">
+          <article class="panel action-column">
+            <span class="tag blue">Day 1-30</span>
+            <h3>接点形成</h3>
+            <ul class="task-list">
+              <li>
+                <strong>監理団体へ接触</strong>
+                <span>紹介可能性、受入企業の課題、提案時の注意点を確認。</span>
+              </li>
+              <li>
+                <strong>企業リスト作成</strong>
+                <span>食品・製造、建設、観光を優先順位付きで整理。</span>
+              </li>
+              <li>
+                <strong>ヒアリング票準備</strong>
+                <span
+                  >人数、職種、制服、サイズ、季節商材を聞ける形にする。</span
+                >
+              </li>
+            </ul>
+          </article>
+          <article class="panel action-column">
+            <span class="tag olive">Day 31-60</span>
+            <h3>商談化</h3>
+            <ul class="task-list">
+              <li>
+                <strong>1社目候補へ訪問</strong>
+                <span>人材課題と制服運用の現状を同時に把握する。</span>
+              </li>
+              <li>
+                <strong>サンプル準備</strong>
+                <span>食品・建設・観光向けの基本セットを最小構成で用意。</span>
+              </li>
+              <li>
+                <strong>見積テンプレート化</strong>
+                <span>1人単価、人数、季節品をすぐ差し替えられる形にする。</span>
+              </li>
+            </ul>
+          </article>
+          <article class="panel action-column">
+            <span class="tag orange">Day 61-90</span>
+            <h3>初回受注</h3>
+            <ul class="task-list">
+              <li>
+                <strong>1社目獲得</strong>
+                <span>入社セットまたは空調服など、最初の有料案件を作る。</span>
+              </li>
+              <li>
+                <strong>導入事例を整理</strong>
+                <span
+                  >課題、提案、金額、運用改善を次の紹介営業で使える形にする。</span
+                >
+              </li>
+              <li>
+                <strong>次の3社へ展開</strong>
+                <span>同業種または同じ監理団体経由で横展開する。</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+        <div class="decision-strip">
+          <strong>会議で決めること</strong>
+          <span
+            >最初に接触する監理団体、優先業種、サンプル予算、1社目の商談責任者。</span
+          >
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const slides = Array.from(document.querySelectorAll(".slide[id]"));
+      const previewRail = document.getElementById("slidePreviewRail");
+      const previewEdge = document.getElementById("slidePreviewEdge");
+      const previewPanel = document.getElementById("slidePreviewPanel");
+      const previewList = document.getElementById("slidePreviewList");
+      const previewDots = document.getElementById("slidePreviewDots");
+      const previewCurrent = document.getElementById("slidePreviewCurrent");
+      const canHover = window.matchMedia(
+        "(hover: hover) and (pointer: fine)",
+      ).matches;
+      const previewPalette = [
+        "rgba(0, 23, 193, 0.1)",
+        "rgba(85, 116, 58, 0.12)",
+        "rgba(200, 91, 32, 0.11)",
+        "rgba(40, 116, 173, 0.11)",
+        "rgba(180, 35, 24, 0.08)",
+      ];
+      let activeIndex = 0;
+
+      function cleanText(value) {
+        return (value || "").replace(/\s+/g, " ").trim();
+      }
+
+      function getSlideMeta(slide, index) {
+        return {
+          title: cleanText(slide.dataset.slideTitle) || `Slide ${index + 1}`,
+          kicker: cleanText(slide.dataset.slideKicker) || "Preview",
+          summary:
+            cleanText(slide.dataset.slideSummary) ||
+            "Open the slide to inspect details.",
+        };
+      }
+
+      function setRailOpen(isOpen) {
+        previewRail.classList.toggle("is-open", isOpen);
+        previewEdge.setAttribute("aria-expanded", String(isOpen));
+      }
+
+      function goToSlide(index) {
+        const slide = slides[index];
+        if (!slide) return;
+        slide.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (!canHover) setRailOpen(false);
+      }
+
+      function createCard(meta, index) {
+        const card = document.createElement("button");
+        const number = document.createElement("span");
+        const metaWrap = document.createElement("span");
+        const kicker = document.createElement("span");
+        const title = document.createElement("strong");
+        const summary = document.createElement("span");
+
+        card.type = "button";
+        card.className = "slide-preview-card";
+        card.style.setProperty(
+          "--preview-tint",
+          previewPalette[index % previewPalette.length],
+        );
+        card.title = `${index + 1}. ${meta.title}`;
+        card.addEventListener("click", () => goToSlide(index));
+
+        number.className = "slide-preview-card-num";
+        number.textContent = String(index + 1).padStart(2, "0");
+
+        metaWrap.className = "slide-preview-card-meta";
+
+        kicker.className = "slide-preview-card-kicker";
+        kicker.textContent = meta.kicker;
+
+        title.className = "slide-preview-card-title";
+        title.textContent = meta.title;
+
+        summary.className = "slide-preview-card-summary";
+        summary.textContent = meta.summary;
+
+        metaWrap.append(kicker, title, summary);
+        card.append(number, metaWrap);
+        return card;
+      }
+
+      function createDot(index, title) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "slide-preview-dot";
+        dot.title = `${index + 1}. ${title}`;
+        dot.addEventListener("click", () => goToSlide(index));
+        return dot;
+      }
+
+      const previewItems = slides.map((slide, index) => {
+        const meta = getSlideMeta(slide, index);
+        const card = createCard(meta, index);
+        const dot = createDot(index, meta.title);
+        previewList.appendChild(card);
+        previewDots.appendChild(dot);
+        return { card, dot, meta };
+      });
+
+      function updateActivePreview(index) {
+        activeIndex = index;
+        previewCurrent.textContent = `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+        previewItems.forEach(({ card, dot }, cardIndex) => {
+          const isActive = cardIndex === index;
+          card.classList.toggle("is-active", isActive);
+          dot.classList.toggle("is-active", isActive);
+        });
+      }
+
+      const slideObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!visible) return;
+
+          const index = slides.indexOf(visible.target);
+          if (index >= 0) updateActivePreview(index);
+        },
+        {
+          threshold: [0.4, 0.55, 0.7],
+        },
+      );
+
+      slides.forEach((slide) => slideObserver.observe(slide));
+      updateActivePreview(0);
+
+      previewEdge.addEventListener("click", () => {
+        setRailOpen(!previewRail.classList.contains("is-open"));
+      });
+
+      previewPanel.addEventListener(
+        "wheel",
+        (event) => {
+          event.preventDefault();
+          previewList.scrollTop += event.deltaY;
+        },
+        { passive: false },
+      );
+
+      document.addEventListener("keydown", (event) => {
+        if (event.altKey || event.ctrlKey || event.metaKey) return;
+
+        if (event.key === "ArrowDown" || event.key === "PageDown") {
+          event.preventDefault();
+          goToSlide(Math.min(activeIndex + 1, slides.length - 1));
+        }
+
+        if (event.key === "ArrowUp" || event.key === "PageUp") {
+          event.preventDefault();
+          goToSlide(Math.max(activeIndex - 1, 0));
+        }
+
+        if (event.key === "Escape") setRailOpen(false);
+      });
+    </script>
+    <script src="../../shared/slide-pdf-export.js"></script>
+  </body>
+</html>
