@@ -1,0 +1,15 @@
+{
+  "name": "visualizer-starter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export:pdf": "node tools/export-slides-to-pdf.mjs",
+    "generate:index": "node tools/generate-index.mjs && prettier --write index.html",
+    "install:browser": "playwright install chromium",
+    "validate:slides": "node tools/validate-slide-layout.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.50.0",
+    "prettier": "^3.6.2"
+  }
+}

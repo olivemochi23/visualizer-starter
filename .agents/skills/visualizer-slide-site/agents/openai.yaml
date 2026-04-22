@@ -1,0 +1,7 @@
+interface:
+  display_name: "Visualizer Slide Site"
+  short_description: "Create 16:9 slide-style HTML visualizers"
+  default_prompt: "Use $visualizer-slide-site to create a slide-style HTML visualization in this repo."
+
+policy:
+  allow_implicit_invocation: true

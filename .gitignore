@@ -1,0 +1,7 @@
+node_modules/
+exports/
+inbox/
+.DS_Store
+.npm-cache/
+.claude/worktrees/
+
